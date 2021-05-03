@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+	<meta charset="utf-8">
+	<meta name="author" content="Sofia Lucca">
+	<meta name="description" content="Esercizio 6.8">
+	<link rel="icon" type="image/png" href="../icona_SL.png">
+	<title>Esercizio 6.8</title>
+</head>
+<body>
+	<p>
+		Benvenuto <span id=nome>NOME MANCANTE</span> nel mio umile sito!
+	</p>
+	<script>
+		'use strict';
+		var nome = window.prompt("Inserire il proprio nome:");
+		if(nome === null){
+			document.querySelector('p').textContent = "Errore manca il nome";
+		}else{
+			nome = nome.toUpperCase();
+			var nomeHTML = document.getElementById('nome');
+			nomeHTML.textContent = nome;			
+		}
+
+
+	</script>
+
+</body>
+</html>

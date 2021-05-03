@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name='author' content="Sofia Lucca">
+	<meta name='description' content="Esercizio 6.1">
+	<link rel="icon" type="image/png" href="../icona_SL.png">
+
+	<title>Esercizio 6.3</title>
+	
+</head>
+<body >
+	<script type="text/javascript">
+		var n1 = window.prompt("Inserire un numero");
+		n1_numero=Number(n1);
+		if(!n1_numero){
+			window.alert(`${n1} non è nel formato corretto`);
+		}else{
+			var n2 = window.prompt("Inserire un altro numero");
+			n2_numero=Number(n2);
+			if(!n2_numero){
+				window.alert(`${n2} non è nel formato corretto`);
+			}else{
+				window.alert(`${n1} + (${n2}) = ${n1_numero+n2_numero}`);
+				window.alert(`${n1} - (${n2}) = ${n1_numero-n2_numero}`);
+			}
+		}
+		
+	</script>
+</body>
+</html>

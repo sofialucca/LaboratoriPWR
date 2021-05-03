@@ -1,0 +1,91 @@
+
+body{
+	font-family: Times,'Times New Roman',serif;
+	background: white;
+	color:black;
+	counter-reset: h2cnt;
+}
+
+.theHeader {
+	grid-area: header;
+	text-align: center;
+}
+.menu{
+	display:none;
+}
+.contenuto{
+	grid-area: main;
+}
+.theFooter{
+	grid-area: footer;
+	font: italic small serif;
+	border-top: 2pt solid black;
+	padding-top: 5pt;
+
+}
+.grid-container{
+	display: grid;
+	grid-template-areas: 
+	'header'
+	'main'
+	'footer ';
+}
+
+a{
+	text-decoration: underline;
+}
+
+a:link, a:hover, a:active, a:visited{
+	color: black;
+}
+
+#luogo_nascita::after{
+	content:" (https://it.wikipedia.org/wiki/Borgosesia)" ;
+}
+
+.media,img{
+	display:none;
+}
+
+h1,h2{
+	font-variant:  small-caps;
+}
+
+span{
+	font-style: oblique;
+}
+
+p.citazione{
+	text-align: center;
+	font-style: italic;
+}
+
+h2::before{
+	counter-increment: h2cnt;
+	content:counter(h2cnt) ". ";
+}
+th{
+	color: pink;
+	font-variant: small-caps;
+	font-weight: bold;
+	text-align: center;
+}
+
+tr.voto_verde{
+	color:lime;
+}
+tr.voto_rosa{
+	color: pink;
+}
+tr,td,th{
+	border:thin solid white;
+}
+td.voto{
+	text-align: center;
+	
+}
+
+table{
+	border:thin solid white;
+	width:100%;
+}

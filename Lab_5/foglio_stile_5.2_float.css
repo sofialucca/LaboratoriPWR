@@ -1,0 +1,115 @@
+body{
+	font-family: sans-serif;
+	background-image: url("background.png");
+	background-repeat: repeat; 
+	color: white;
+	background-color: black;
+	counter-reset: h2cnt;
+}
+#header{
+	clear:both;
+	text-align:center;
+	border: 5px groove red;
+	padding: 5px;
+	min-width: 30em;
+}
+#menu{
+	float:left;
+	width:20em;
+}
+#content{
+	float:left;
+	min-width: 30em;
+}
+
+#footer{
+	font: italic small serif;
+	clear:both;
+	border-top: 10px solid blue;
+	padding-top: 5px;
+	min-width: 30em;
+}
+
+p{
+	line-height: 1.10rem;
+}
+
+a:link, a:visited{
+	color: aqua;
+}
+
+a:hover{
+	color: white;
+	background: red;
+}
+
+a:active{
+	background: green;
+}
+
+p:first-letter{
+	font-size: 200%;
+	color: red;
+}
+th{
+	color: #ffc0cb;
+	font-variant: small-caps;
+	font-weight: bold;
+	text-align: center;
+}
+
+tr.voto_verde{
+	color:lime;
+}
+tr.voto_rosa{
+	color: #ffc0cb;
+}
+tr,td,th{
+	border:thin solid white;
+}
+td.voto{
+	text-align: center;
+	
+}
+
+table{
+	border:thin solid white;
+	width:100%;
+}
+
+img.logo{
+	width:100px;
+}
+
+#foto_CV{
+	width:10%;
+}
+
+#logo_HTML5{
+	width:5%;
+}
+h1,h2{
+	font-variant:  small-caps;
+}
+
+h1{
+	text-align: center;
+}
+
+span{
+	font-style: oblique;
+}
+
+#foto_homepage{
+	width:  50%;
+}
+
+p.citazione{
+	text-align: center;
+	font-style: italic;
+}
+
+h2::before{
+	counter-increment: h2cnt;
+	content:counter(h2cnt) ". ";
+}

@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name='author' content="Sofia Lucca">
+	<meta name='description' content="Esercizio 6.1">
+	<link rel="icon" type="image/png" href="../icona_SL.png">
+
+	<title>Esercizio 6.6</title>
+	
+</head>
+<body >
+	<script type="text/javascript">
+		'use strict';
+		var n1 = window.prompt("Inserire un numero");
+		
+		if(Math.abs(parseInt(n1)) == n1){
+			var tabella = document.createElement("table");
+			tabella.rules = 'all';
+			tabella.cellspacing = '5px';
+			tabella.frame = 'border';
+			tabella.border = '2px';
+			tabella.width = '50%';
+			var intestazione = document.createElement("thead");
+			var rigaInt = document.createElement("tr");
+			var incrocio = document.createElement("th");
+			incrocio.textContent = "X";
+			rigaInt.appendChild(incrocio);
+
+			var contenuto = document.createElement("tbody");
+			
+	
+			for(var i=1;i<=n1;i++){
+				var riga = document.createElement("tr");
+				var intestazioneI = document.createElement("th");
+				intestazioneI.textContent = i;
+				rigaInt.appendChild(intestazioneI);
+				var intestazioneColonna = document.createElement("th");
+				intestazioneColonna.textContent = i;
+				riga.appendChild(intestazioneColonna);
+				for(var j=1;j<=n1; j++){
+					var prodotto = document.createElement("td");
+					prodotto.textContent = i*j;
+					riga.appendChild(prodotto);
+				}
+				contenuto.appendChild(riga);
+			}
+			intestazione.appendChild(rigaInt);
+			tabella.appendChild(intestazione);
+			tabella.appendChild(contenuto);
+			document.body.appendChild(tabella);
+
+		}else{
+			document.writeln(`${n1} non è nel formato corretto`);
+		}
+		
+	</script>
+</body>
+</html>

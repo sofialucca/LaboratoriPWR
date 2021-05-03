@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name='author' content="Sofia Lucca">
+	<meta name='description' content="Esercizio 6.1">
+	<link rel="icon" type="image/png" href="../icona_SL.png">
+	<title>Esercizio 6.7</title>
+	
+</head>
+<body>
+	<p>
+		Lista elementi:<span id="elementi"> </span>
+	</p>
+	<p>
+		Media:<span id="media"></span>
+	</p>
+	<script type="text/javascript">
+		'use strict';
+		var somma = 0;
+		var count = 1;
+		var inputUtente=window.prompt("Inserire un numero intero");
+		var listaNumeri = document.getElementById("elementi");	
+		var mediaHTML = document.getElementById("media");
+		while (inputUtente !== 'fine'){
+			if(Number(inputUtente)){
+				somma += Number(inputUtente)
+				listaNumeri.textContent += `${inputUtente} `;		
+				mediaHTML.textContent = somma/count;
+				inputUtente = window.prompt(`L'ultimo numero scritto è ${inputUtente} e la media con gli altri numeri è ${somma/count}`);
+				count++;
+			}else{
+				inputUtente = window.prompt("errore inserito il seguente valore non valido: "+inputUtente);
+			}			
+		}
+
+	</script>
+
+
+
+</body>
+</html>

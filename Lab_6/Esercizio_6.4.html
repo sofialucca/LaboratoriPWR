@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name='author' content="Sofia Lucca">
+	<meta name='description' content="Esercizio 6.1">
+	<link rel="icon" type="image/png" href="../icona_SL.png">
+
+	<title>Esercizio 6.4</title>
+	
+</head>
+<body >
+	<script type="text/javascript">
+		'use strict';
+		var n1 = window.prompt("Inserire un numero");
+		n1_numero=Number(n1);
+		if(!n1_numero){
+			document.writeln(`${n1} non è nel formato corretto`);
+		}else{
+			var n2 = window.prompt("Inserire un altro numero");
+			n2_numero=Number(n2);
+			if(!n2_numero){
+				document.writeln(`${n2} non è nel formato corretto`);
+			}else{
+				var lista = document.createElement('ul');
+				lista.type = 'circle';
+				var primo = document.createElement('li');
+				var secondo = document.createElement('li');
+				var somma = document.createElement('li');
+				var differenza = document.createElement('li');
+				//document.writeln("Elementi di input");
+				primo.textContent = n1;
+				secondo.textContent = n2;
+				somma.textContent = `Somma: ${n1_numero+n2_numero}`;
+				differenza.textContent = `Differenza: ${n1_numero-n2_numero}`;
+				lista.appendChild(primo);
+				lista.appendChild(secondo);
+				lista.appendChild(somma);
+				lista.appendChild(differenza);
+				document.body.appendChild(lista);
+			}
+		}
+		
+	</script>
+
+
+</body>
+</html>

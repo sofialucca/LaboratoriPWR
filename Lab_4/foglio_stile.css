@@ -1,0 +1,101 @@
+body{
+	font-family: sans-serif;
+	background-image: url("background.png");
+	background-repeat: repeat; 
+	color: white;
+	background-color: black;
+	counter-reset: h2cnt;
+	line-height:110%;
+	font-size:100%;
+}
+
+footer{
+	font: italic small serif;
+}
+
+p{
+	line-height: 1.10rem;
+}
+
+a:link, a:visited{
+	color: aqua;
+}
+
+a:hover{
+	color: white;
+	background: red;
+}
+
+a:active{
+	background: green;
+}
+
+p:first-letter{
+	font-size: 200%;
+	color: red;
+	font-weight:bold;
+}
+th{
+	color: pink;
+	font-variant: small-caps;
+	font-weight: bold;
+	text-align: center;
+}
+
+tr.voto_verde{
+	color:lime;
+}
+tr.voto_rosa{
+	color: pink;
+}
+tr,td,th{
+	border:thin solid white;
+}
+td.voto{
+	text-align: center;
+	
+}
+
+table{
+	border:thin solid white;
+	width:100%;
+}
+
+img.logo{
+	width:100px;
+}
+
+#foto_CV{
+	width:10%;
+}
+
+#logo_HTML5{
+	width:5%;
+}
+h1,h2{
+	font-variant:  small-caps;
+}
+
+h1{
+	text-align: center;
+}
+
+span{
+	font-style: oblique;
+}
+
+#foto_homepage{
+	display:block; 
+	margin: 0 auto;
+	width:  50%;
+} /*con display block si occupa titta la roga e lo rende centrato*/
+
+p.citazione{
+	text-align: center;
+	font-style: italic;
+}
+
+h2::before{
+	counter-increment: h2cnt;
+	content:counter(h2cnt) ". ";
+}

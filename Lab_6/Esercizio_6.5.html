@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name='author' content="Sofia Lucca">
+	<meta name='description' content="Esercizio 6.1">
+	<link rel="icon" type="image/png" href="../icona_SL.png">
+
+	<title>Esercizio 6.5</title>
+	
+</head>
+<body >
+	<script type="text/javascript">
+		'use strict';
+		var n1 = window.prompt("Inserire un numero");
+		
+		if(Math.abs(parseInt(n1)) == n1){
+			var tabella = document.createElement("table");
+			tabella.rules = 'all';
+			tabella.cellspacing = '5px';
+			tabella.frame = 'border';
+			tabella.border = '2px';
+			tabella.width = '50%';
+			var intestazione = document.createElement("thead");
+			var rigaInt = document.createElement("tr");
+			var numero = document.createElement("th");
+			var quadrato = document.createElement("th");
+			var cubo = document.createElement("th");
+			numero.textContent = 'N';
+			quadrato.textContent = 'N^2';
+			cubo.textContent = 'N^3';
+			rigaInt.appendChild(numero);
+			rigaInt.appendChild(quadrato);
+			rigaInt.appendChild(cubo);
+			intestazione.appendChild(rigaInt);
+			tabella.appendChild(intestazione);
+			var contenuto = document.createElement("tbody");
+			
+	
+			for(var i=1;i<=n1;i++){
+				var riga = document.createElement("tr");
+				var quadratoN = document.createElement("td");
+				var cuboN = document.createElement("td");
+				var numeroN = document.createElement("td");
+				riga.appendChild(numeroN);
+				riga.appendChild(quadratoN);
+				riga.appendChild(cuboN);
+				numeroN.textContent = i;
+				quadratoN.textContent = i^2;
+				cuboN.textContent = i^3;
+				contenuto.appendChild(riga);
+			}
+			tabella.appendChild(contenuto);
+			document.body.appendChild(tabella);
+
+		}else{
+			document.writeln(`${n1} non è nel formato corretto`);
+		}
+		
+	</script>
+</body>
+</html>

@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+	<meta charset="utf-8">
+	<meta name="author" content="Sofia Lucca">
+	<link rel="icon" type="image/png" href="../icona_SL.png">
+	<title>Liguaggio SVG</title>
+</head>
+<body>
+	<svg width=300 height=200>
+		<rect width=300 height=200 style="fill:yellow; stroke-width:2; stroke:black;"/>
+		<line x1=0 y1=0 x2=300 y2=200 style="stroke-width:2; stroke: blue;"/>
+		<line x1=300 y1=0 x2=0 y2=200 style="stroke-width:2; stroke: blue;"/>
+		<text fill="black" font-size="100%" font-family="serif" x=110 y=55>HTML-SVG</text>
+		<!-- Dato che la diagonale1 inizia a 0,0 e finisce a 300,200 , perchè il testo sia nella parte alta del rettangolo, bisogna avere x>(3/2)y. Inoltre, perchè non superi la seconda diagonale, data la lunghezza del testo (chiamiamola t_len), bisogna avere x<(300-(3/2)y)-t_len -->
+		Scusa ma il tuo browser non supporta la lettura di SVG
+	</svg>
+</body>
+</html>
