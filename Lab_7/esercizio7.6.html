@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name='author' content="Sofia Lucca">
+	<meta name='description' content="Esercizio 7.6">
+	<link rel="icon" type="image/png" href="../icona_SL.png">
+	<title>Esercizio 7.6</title>
+	<script>
+        function cambioSfondo(x){
+            document.body.style.backgroundColor = x.value;
+        }
+    </script>
+</head>
+<body>
+    <form>
+        <p>
+            Scegliere un colore:
+            <input type = 'color' id = 'colore' onchange = 'cambioSfondo(colore)'>
+        </p>
+    </form>
+</body>
+</html>

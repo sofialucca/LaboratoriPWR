@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name='author' content="Sofia Lucca">
+	<meta name='description' content="Esercizio 7.9">
+	<link rel="icon" type="image/png" href="../icona_SL.png">
+	<title>Esercizio 7.9</title>
+
+    <script>
+        function nataleGiorno(data,natale){
+            var expr = /^\d{1,2}\/\d{1,2}\/\d{4}$/;
+            if(!expr.test(data)){
+                window.alert("ERRORE: Inserire la data nel formato richiesto dd/mm/yyyy");
+                return;
+            }
+            var dataArray = data.split("/");
+            dataArray.forEach((v) => {parseInt(v)});
+            if(dataArray[2]>2021){
+                window.alert("ERRORE: inserire data di precedente a 2021")
+            }
+            if(dataArray[1]>12){
+                window.alert("ERRORE: inserire un mese valdo compreso tra 1 e 12");
+            }
+            if(dataArray[0]>31){
+                window.alert("ERRORE: un mese non può avere più di 31 giorni")
+            }else if(dataArray[1] == 2){
+                if(dataArray[2] % 4 == 0 && dataArray[0]>29){
+                    window.alert("ERRORE: Febbraio non può avere più di 29 giorni per l'anno "+ dataArray[2]);
+                }else if(dataArray[2] % 4 !== 0 && dataArray[0]>28){
+                    window.alert("ERRORE: Febbraio non può avere più di 28 giorni per l'anno "+ dataArray[2]);
+                }
+            }else if((dataArray[1] == 4 || dataArray[1] == 6 ||dataArray[1] == 9 ||dataArray[1] == 11)&&dataArray[0]>30){
+                window.alert("ERRORE: mese scelto non ha 31 giorni");
+            }else{
+                var nataleData = new Date(dataArray[2], 12, 25);
+                natale.value = "Natale era: "
+                if(nataleData.getDay()==0){
+                    natale.value += "Domenica";
+                }else if(nataleData.getDay()==1){
+                    natale.value += 'Lunedì';
+                }else if(nataleData.getDay()==2){
+                    natale.value += 'Martedì';
+                }else if(nataleData.getDay()==3){
+                    natale.value += 'Mercoledì';
+                }else if(nataleData.getDay()==4){
+                    natale.value += 'Giovedì';
+                }else if(nataleData.getDay()==5){
+                    natale.value += 'Venerdì';
+                }else if(nataleData.getDay()==6){
+                    natale.value += 'Sabato';
+                }
+               
+            }
+
+        }
+    </script>
+</head>
+<body>
+    <form onchange="nataleGiorno(nascita.value,natale)">
+        <p>
+            Inserire la data di nascita (formato dd/mm/yyyy): 
+            <input type="text" id="nascita"><br>
+            <output id="natale"></output>
+        </p>        
+    </form>
+</body>
+</html>

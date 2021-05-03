@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name='author' content="Sofia Lucca">
+	<meta name='description' content="Esercizio 7.2">
+	<link rel="icon" type="image/png" href="../icona_SL.png">
+	<title>Esercizio 7.2</title>
+	<script>
+        function calcoloCerchio(input){
+            var d = Number(input);
+            if(d){
+                var a = Math.PI*(Math.pow(d, 2)/2);
+                var c = Math.PI*d;
+                document.write(`Un cerchio di diametro ${d.toPrecision(3)} ha area ${a.toPrecision(3)} e circonferenza ${c.toPrecision(3)}`);
+            }else{
+                window.alert("ERRORE: il valore inserito deve essere un numero diverso da zero");
+                document.write('<p>ERRORE<\/p>');
+            }
+        }
+    </script>
+</head>
+<body onload="calcoloCerchio(window.prompt('Inserire un numero diverso da zero:'))">
+
+</body>
+</html>

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+	<meta charset="utf-8">
+	<meta name="author" content="Sofia Lucca">
+	<meta name="description" content="Esercizio 7.4">
+	<link rel="icon" type="image/png" href="../icona_SL.png">
+	<title>Esercizio 7.4</title>
+    <script>
+        function conversioneMinuscolo(nomeId){
+            var fraseLower = nomeId.value.toLowerCase();
+            //fraseLower = fraseLower.toLowerCase();
+            window.alert(fraseLower);
+        }
+    </script>
+</head>
+<body>
+    <form onsubmit="conversioneMinuscolo(frase)">
+        <p>
+            Inserire una frase:
+        <input type ='text' id = 'frase'>
+        <input type ='submit' value = 'OK'>
+        </p>
+    </form>
+</body>
+</html>
+

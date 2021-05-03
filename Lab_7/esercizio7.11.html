@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name='author' content="Sofia Lucca">
+	<meta name='description' content="Esercizio 7.11">
+	<link rel="icon" type="image/png" href="../icona_SL.png">
+	<title>Esercizio 7.11</title>
+    <script>
+        function calcoloCosto(risultato,c1,c2,c3){
+            c1 = Number(c1);
+            c2 = Number(c2);
+            c3 = Number(c3);
+            var costo1 = c1*15.5;
+            var costo2 = c2*18;
+            var costo3 = c3*2;
+            var totale = costo1+costo2+costo3;
+            risultato.value = "Memoria SD da 8GB: "+costo1+" Euro\nChiavetta USB 8GB: "+costo2+" Euro\nDVD-R: "+costo3+" Euro\nTotale: "+totale+" Euro";
+            console.log(risultato)
+        }
+    </script>
+</head>
+<body>
+    <form>
+        <p>
+        <label>Memoria SD 8GB: </label>     
+        <select name = 'memoria_sd'>       
+                <option value=0>0</option>
+                <option value=1>1</option>
+                <option value=2>2</option>
+                <option value=3>3</option>
+                <option value=4>4</option>
+                <option value=5>5</option>
+                <option value=6>6</option>
+                <option value=7>7</option>
+                <option value=8>8</option>
+                <option value=9>9</option>
+                <option value=10>10</option>
+        </select></p>
+        <p>
+        <label>Chiavetta USB 8GB: </label>             
+        <select name = 'chiavetta_usb'>
+                 <option value=0>0</option>
+                 <option value=1>1</option>
+                 <option value=2>2</option>
+                 <option value=3>3</option>
+                 <option value=4>4</option>
+                 <option value=5>5</option>
+                 <option value=6>6</option>
+                 <option value=7>7</option>
+                 <option value=8>8</option>
+                 <option value=9>9</option>
+                 <option value=10>10</option>
+        </select></p>
+        <p>
+        <label>DVD-R: </label>     
+        <select name = 'dvd_R'>
+                 <option value=0>0</option>
+                 <option value=1>1</option>
+                 <option value=2>2</option>
+                 <option value=3>3</option>
+                 <option value=4>4</option>
+                 <option value=5>5</option>
+                 <option value=6>6</option>
+                 <option value=7>7</option>
+                 <option value=8>8</option>
+                 <option value=9>9</option>
+                 <option value=10>10</option>
+        </select></p>
+        <p>
+            <button type = "button" onclick = "calcoloCosto(result,memoria_sd.value,chiavetta_usb.value,dvd_R.value)">Calcolo costo</button>
+            <br>           
+            Costo dei prodotti scelti è: <textarea id='result' disabled></textarea>
+            <br>      
+            <input  type = 'reset' value = 'Azzera' > 
+        </p>
+    </form>
+</body>
+</html>

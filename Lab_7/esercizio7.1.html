@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name='author' content="Sofia Lucca">
+	<meta name='description' content="Esercizio 7.1">
+	<link rel="icon" type="image/png" href="../icona_SL.png">
+	<title>Esercizio 7.1</title>
+	
+</head>
+<body >
+    <p id = "dataComputer"></p>
+    <p id = "dataUTC"></p>    
+    <script>
+        var data = new Date();
+        document.getElementById("dataComputer").textContent = "Data nel formato del computer: "+data.toLocaleString() ;
+        document.getElementById("dataUTC").textContent="Data nel formato UTC: "+data.toUTCString();
+    </script>
+
+</body>
+</html>
