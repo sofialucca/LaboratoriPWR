@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang='it'>
+<head>
+	<meta charset="utf-8">
+	<meta name='author' content="Sofia Lucca">
+	<meta name='description' content="Esercizio 7.12">
+	<link rel="icon" type="image/png" href="../icona_SL.png">
+	<title>Esercizio 7.12</title>
+    <script>
+        'use strict';
+
+        function change(messaggio, identificativo){
+            var par = document.getElementById(identificativo);
+            par.innerHTML = messaggio;
+            par.style.color = 'red';
+        }
+
+        function ritornoNormale(identificativo){
+            var par = document.getElementById(identificativo);
+            par.style.color = 'black';
+            par.innerHTML = 'Nessun testo inserito';
+        }
+    </script>
+
+</head>
+<body>
+    <form onreset="ritornoNormale('testoOutput')">
+            Inserire testo: 
+            <input type="text" id ='testoInput' placeholder='Scrivi'> 
+
+            <button type ="button"  onclick="change(testoInput.value,'testoOutput')">OK</button>
+            <input type ='reset' value = 'RESET'>
+    
+        <h1>TESTO INSERITO</h1>
+        <p id = 'testoOutput'>
+            Nessun testo inserito
+        </p>
+    </form>
+</body>
+</html>

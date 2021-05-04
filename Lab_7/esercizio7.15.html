@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="it">
+    <head>
+        <meta charset="utf-8">
+        <meta name='author' content="Sofia Lucca">
+        <meta name='description' content="Esercizio 7.15">
+        <link rel="icon" type="image/png" href="../icona_SL.png">
+        <title>Esercizio 7.15</title>
+        <script>
+            'use strict';
+             function controllo(nomeForm){
+                var stringa = nomeForm.username.value;
+                var result = "";
+                if(stringa.length<5){
+                   result= "ERRORE: la stringa deve contenere almeno 5 caratteri\n";
+                }
+                
+                if(/[^a-zA-Z,\.]/.test(stringa)){
+                    result += "ERRORE: la stringa può contenere solo caratteri alfabetici, punti o virgole.\nValori errati: ";
+                    let arrayErrori = stringa.split(/[a-zA-Z,\.]/);
+                    for(let i =0;i<arrayErrori.length;i++){
+                        result += arrayErrori[i]+" ";
+                    }
+                    result+="\n";
+                }
+                if(!/(?=.*?[A-Z])/.test(stringa)){
+
+                    result +="ERRORE: username deve contenere almeno una lettera maiuscola\n";
+                }
+                if(!/(?=.*?[a-z])/.test(stringa)){
+                    result +="ERRORE: username deve contenere almeno una lettera minuscola";
+                }
+                if(result.length > 0){
+                    alert(result);
+                }
+             }
+        </script>
+    </head>
+    <body>
+        <form name = f onsubmit="controllo(f)">
+            <p>
+                Inserire username: 
+                <input type = 'text' placeholder ='username' name ='username'> 
+                <input type = 'submit' value = 'CONTROLLA'>
+            </p>
+        </form>
+    </body>

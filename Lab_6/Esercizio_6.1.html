@@ -7,15 +7,25 @@
 	<link rel="icon" type="image/png" href="../icona_SL.png">
 
 	<title>Esercizio 6.1</title>
-	
-</head>
-<body >
-	<script type="text/javascript" >
-		window.alert('inizio caricamento')
-		document.addEventListener("DOMContentLoaded", window.alert("fine caricamento"));
+	<script>
+		"use strict";
+		
+		window.alert('inizio caricamento');
+
+		function fineCaricamento(){
+			window.alert("fine caricamento");
+			return true;
+		}
 	</script>
-		Sofia Lucca
 
-
+</head>
+<body onload="fineCaricamento()">
+    <h1>Esercizio 6.1 </h1>
+    <ul>
+      <li><em>Nome</em>: Sofia</li>
+      <li><em>Cognome</em>: Lucca</li>
+      <li><em>Professione</em>: Studente</li>
+      <li><em>Email</em>: s257431@studenti.polito.it</li>
+    </ul>
 </body>
 </html>

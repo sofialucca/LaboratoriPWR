@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+    <html lang="it">
+        <head>
+            <meta charset="utf-8">
+            <meta name='author' content="Sofia Lucca">
+            <meta name='description' content="Esercizio 7.13">
+            <link rel="icon" type="image/png" href="../icona_SL.png">
+            <title>Esercizio 7.13</title>
+            <script>
+                'use strict';
+                function calcolo(f){
+                    if(check(f)){
+                        var num1 = Number(f.n1.value);
+                        var num2 = Number(f.n2.value);
+                        var op = f.operazione.value;
+                        var risultato;
+                        if(op === 'Somma'){
+                            risultato = (num1+num2);
+                        }else if(op === 'Differenza'){
+                            risultato = (num1-num2);
+                        }else if(op === 'Moltiplicazione'){
+                            risultato = (num1*num2);
+                        }else{
+                            risultato = (num1/num2);
+                        }
+                        f.result.value = risultato;
+                    }
+                }
+                
+                function check(f){
+                    var expr = /^(-|\+)?\d+\.\d{2}$/;
+                    
+                    var controllo = true;
+
+                    if(!expr.test(f.n1.value)){
+                        window.alert("ERRORE: inserire il primo numero nel formato corretto.");
+                        controllo = false;
+                    }
+                    if(!expr.test(f.n2.value)){
+                        window.alert("ERRORE: inserire il secondo numero nel formato corretto.");
+                        controllo = false;
+                    }
+                    if(f.operazione.value == null){
+                        window.alert("ERRORE: scegliere un'operazione")
+                        controllo = false;
+                    }
+                    return controllo;
+                }
+            </script>
+        </head>
+        <body>
+            <form name = 'f'>
+                <p>
+                    Inserire due numeri decimali con esattamente due cifre dopo la virgola: <br>
+                    <input type = 'text' placeholder="Numero 1" name = 'n1' required > 
+                    <input type = 'text' placeholder='Numero 2' name = 'n2' required >                    
+                </p>
+                <p>
+                    Scegliere un'operazione:
+                    <select name = 'operazione'>
+                        <option>Somma</option>
+                        <option>Differenza</option>
+                        <option>Moltiplicazione</option>
+                        <option>Divisione</option>
+                    </select>
+                    <button type ="button" onclick="calcolo(f)">CALCOLA</button>
+                </p>
+                <p>
+                    <input type = 'text' name = 'result' disabled><br>
+                    <input type ='reset' value = 'RESET'>
+                </p>
+
+            </form>
+        </body>
+    </html>
