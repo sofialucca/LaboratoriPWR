@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="it">
+    <head>
+        <meta charset="utf-8">
+        <meta name='author' content="Sofia Lucca">
+        <meta name='description' content="Esercizio 7.16">
+        <link rel="icon" type="image/png" href="../icona_SL.png">
+        <title>Esercizio 7.16</title>
+        <script>
+            'use strict';
+
+            function check(x){
+                var stringa = x.value;
+                if(!/^(\+|-)\d{1,3}\.\d{1}$/.test(stringa)){
+                    window.alert("ERRORE: la temperatura deve essere un numero decimale con massimo tre cifre intere e un e un solo valore di parte decimale dopo un punto. Bisogna specificare segno positivo o negativo\n");
+                    return false;
+                }else{
+                    window.alert('Temperatura nel formato corretto');
+                    return true;
+                }
+            }
+        </script>
+    </head>
+    <body>
+        <h1>Esercizio 7.16</h1>
+        <form name = 'f' onsubmit = 'return check(temp)'>
+            Inserire una temperatura: 
+            <input type = 'text' name = 'temp' placeholder = '..Temperatura..'> 
+            <input type = 'submit' value ='CONTROLLA'>
+        </form>
+    </body>
+</html>

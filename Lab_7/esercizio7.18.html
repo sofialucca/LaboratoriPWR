@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="it">
+    <head>
+        <meta charset="utf-8">
+        <meta name='author' content="Sofia Lucca">
+        <meta name='description' content="Esercizio 7.18">
+        <link rel="icon" type="image/png" href="../icona_SL.png">
+        <title>Esercizio 7.18</title>
+        <script>
+            'use strict';
+
+            function controllo(formObj){
+                var dataObj = formObj.data;
+                if(!dataObj.checkValidity()){
+                    dataObj.setCustomValidity("ERRORE: formato richiesto gg-mm-aaaa con solo numer interi");
+                    window.alert(dataObj.validationMessage);
+                }else{
+                    var dataArray = dataObj.value.split("-");
+                    dataArray.forEach((v) => {parseInt(v)});
+                    var resultGiorno = dataArray[0];
+                    var resultMese = dataArray[1];
+                    var resultAnno = dataArray[2];
+                    if(dataArray[1]>12 || dataArray[1]<1){
+                        resultMese = "ERRORE: mese deve essere compreso tra 1 e 12";
+                    }
+                    if(dataArray[0]>31 || dataArray[0]<1){
+                       resultGiorno = "ERRORE: un mese non può avere più di 31 giorni o meno di 1";
+                    }else if(dataArray[1] == 2){
+                        if(dataArray[2] % 4 == 0 && dataArray[0]>29){
+                            resultGiorno = "ERRORE: Febbraio non può avere più di 29 giorni per l'anno "+ dataArray[2];
+                        }else if(dataArray[2] % 4 !== 0 && dataArray[0]>28){
+                            resultGiorno = "ERRORE: Febbraio non può avere più di 28 giorni per l'anno "+ dataArray[2];
+                        }
+                    }else if((dataArray[1] == 4 || dataArray[1] == 6 ||dataArray[1] == 9 ||dataArray[1] == 11)&&dataArray[0]>30){
+                        resultGiorno = "ERRORE: mese scelto non ha 31 giorni";
+                        }
+                    
+                    f.innerHTML = "Giorno:<br> <textarea readonly>"+resultGiorno+"</textarea><br>"+ 
+                        "Mese: <br> <textarea readonly>"+resultMese+"</textarea><br>"+
+                        "Anno: <br> <textarea readonly>"+resultAnno+"</textarea>"
+                }
+            }
+
+        </script>
+
+    </head>
+    <body>
+        <h1>Esercizio 7.18</h1>
+        <form id = 'f' onchange = 'controllo(f)'>
+            Inserire una data (formato gg-mm-aaaa): 
+            <input type="text" name ="data" pattern="^\d{1,2}-\d{1,2}-\d{4}$" placeholder="...Data...">
+        </form>
+    </body>
+</html>

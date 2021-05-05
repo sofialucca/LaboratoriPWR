@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="it">
+    <head>
+        <meta charset="utf-8">
+        <meta name='author' content="Sofia Lucca">
+        <meta name='description' content="Esercizio 7.17">
+        <link rel="icon" type="image/png" href="../icona_SL.png">
+        <title>Esercizio 7.17</title>
+        <script>
+            'use strict';
+
+            function controllo(formId,msgId){
+                var nomeObj = formId.nome;
+                var etaObj = formId.eta;
+                var telObj =formId.tel;
+                var msgObj = document.getElementById(msgId);
+                var check = true;
+                var result = '';
+                if(!nomeObj.checkValidity()){
+                    window.alert('Nome solo caratteri alfabetici, lunghezza massima 10, tutto minuscolo tranne la prima lettera');
+                    check = false;
+                }
+                if(!etaObj.checkValidity()){
+                    window.alert(etaObj.validationMessage);
+                    check = false;
+                }
+                if(!telObj.checkValidity()){
+                    window.alert("Telefono nel formato 0p(p)-xxx(-)xxx(x) con p prefisso");
+                    check = false;
+                }
+                if(check){
+                    msgObj.innerHTML = "Dati corretti"
+                }else{
+                    msgObj.innerHTML = "";
+                }
+            }
+        </script>
+
+    </head>
+    <body>
+        <h1>Esercizio 7.17</h1>
+        <form name = 'f'>
+            <fieldset>
+                <legend> Dati utente </legend>
+                Nome: <input type = 'text' placeholder = '..Nome...' name = 'nome' required pattern = '^[A-Z]([a-z]{0,9})$'><br>
+                Et&agrave;: <input type ='number' max = '199' min = '0' name = 'eta' placeholder = '...Età...' required> <br>
+                Numero telefonico: <input type = 'text' name = 'tel' placeholder = '...Telefono...' required pattern = '^0\d{1,2}-\d{3}-?\d{3,4}$'> <br>
+                <input type = 'button' value = 'Verifica' onclick = "controllo(f,'msCorretto')">
+            </fieldset>
+            <span id ='msCorretto'></span>
+        </form>
+    </body>
+</html>

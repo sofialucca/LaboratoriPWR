@@ -10,33 +10,37 @@
             'use strict';
              function controllo(nomeForm){
                 var stringa = nomeForm.username.value;
-                var result = "";
+                var result = "Userame nel formato corretto";
+                var check = true;
                 if(stringa.length<5){
                    result= "ERRORE: la stringa deve contenere almeno 5 caratteri\n";
+                    check = false;
                 }
                 
                 if(/[^a-zA-Z,\.]/.test(stringa)){
                     result += "ERRORE: la stringa può contenere solo caratteri alfabetici, punti o virgole.\nValori errati: ";
-                    let arrayErrori = stringa.split(/[a-zA-Z,\.]/);
+                    let arrayErrori = stringa.match(/[^a-zA-Z,\.]/g);
                     for(let i =0;i<arrayErrori.length;i++){
                         result += arrayErrori[i]+" ";
                     }
                     result+="\n";
+                    check = false;
                 }
                 if(!/(?=.*?[A-Z])/.test(stringa)){
-
                     result +="ERRORE: username deve contenere almeno una lettera maiuscola\n";
                 }
                 if(!/(?=.*?[a-z])/.test(stringa)){
                     result +="ERRORE: username deve contenere almeno una lettera minuscola";
+                    check = false;
                 }
-                if(result.length > 0){
-                    alert(result);
-                }
+                alert(result);
+                return check;
+                
              }
         </script>
     </head>
     <body>
+        <h1>Esercizio 7.15</h1>
         <form name = f onsubmit="controllo(f)">
             <p>
                 Inserire username: 
