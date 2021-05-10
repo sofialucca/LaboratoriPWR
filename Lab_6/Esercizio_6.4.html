@@ -20,7 +20,7 @@
 			var n2 = window.prompt("Inserire un altro numero");
 			n2_numero=Number(n2);
 			if(!n2_numero){
-				document.writeln(`${n2} non è nel formato corretto`);
+				document.writeln(`<p>${n2} non è nel formato corretto</p>`);
 			}else{
 				var lista = document.createElement('ul');
 				lista.type = 'circle';
@@ -29,8 +29,8 @@
 				var somma = document.createElement('li');
 				var differenza = document.createElement('li');
 				//document.writeln("Elementi di input");
-				primo.textContent = n1;
-				secondo.textContent = n2;
+				primo.textContent = `Primo numero: ${n1}`;
+				secondo.textContent = `Secondo numero: ${n2}`;
 				somma.textContent = `Somma: ${n1_numero+n2_numero}`;
 				differenza.textContent = `Differenza: ${n1_numero-n2_numero}`;
 				lista.appendChild(primo);
