@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="it">
+    <head>
+        <meta charset="utf-8">
+        <meta name="author" content="Sofia Lucca">
+        <meta name ="description" content = "Esercizio 8.5">
+        <title>Esercizio 8.5</title>
+    </head>
+    <body>
+        <h1>Esercizio 8.5</h1>
+
+        <!-- <form name ="f" action = "esercizio8.4.php" method="GET" onsubmit="return checkInput(f)"> -->
+        <form name ="f" action = "esercizio8.5.php" method="POST" onsubmit="return checkInput(f)">
+            <div>
+            <p>            
+                <label>Nome prodotto: </label>
+                <input type ="text" name='nomeProdotto' placeholder="..Prodotto.." ><br>
+            </p>
+            <p>
+                <label>Prezzo netto: </label>
+                <input type = "text" name ="prezzoProdotto" placeholder = "..Prezzo.." ><br>
+            </p>
+            <p>
+                <label>Aliquota IVA: </label><br>
+                <input type ="radio" name="aliquota" id="minima" value ="minima">
+                <label for="minima">Minima</label><br>                
+                <input type ="radio" name="aliquota" id="ridotta" value ="ridotta">
+                <label for="ridotta">Ridotta</label><br> 
+                <input type ="radio" name="aliquota" id="ordinaria" value ="ordinaria">
+                <label for="ordinaria">Ordinaria</label><br> 
+            </p>
+            <input type="submit" value="CALCOLO">
+        </div>
+        </form>
+    </body>
+</html>

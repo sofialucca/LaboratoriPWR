@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="it">
+    <head>
+        <meta charset="utf-8">
+        <meta name="author" content = "Sofia Lucca">
+        <meta name="description" content = "Esercizio 8.4">
+        <script>
+            'use strict';
+
+            function checkInput(objForm){
+                var stringa = objForm.nomeProdotto.value;
+                var numero = objForm.prezzoProdotto.value;
+                console.log(stringa+" "+numero)
+                var controllo=true;
+                if(/[^a-zA-Z]/.test(stringa)){
+                    controllo=false;
+                    alert("Nome prodotto dele essere una stringa");
+                }
+                if(!stringa){
+                    controllo=false;
+                    alert("Inserire il nome di un prodotto");
+                }
+                if(!/^\d+(\.|,\d{1,2})?$/.test(numero)){
+                    alert("Prezzo deve essere un numero con al massimo due cifre decimali oppure intero");
+                    controllo = false;
+                }
+                if(!numero){
+                    controllo=false;
+                    alert("Inserire il prezzo di un prodotto");
+                }
+                if(!objForm.aliquota.value){
+                    alert("Selezionare un valore per IVA");
+                    controllo = false;
+                }
+                return controllo;
+            }
+        </script>
+        <title>Esercizio 8.4</title>
+    </head>
+    <body>
+        <h1>Esercizio 8.4</h1>
+
+        <!-- <form name ="f" action = "esercizio8.4.php" method="GET" onsubmit="return checkInput(f)"> -->
+        <form name ="f" action = "esercizio8.4.php" method="POST" onsubmit="return checkInput(f)">
+            <div>
+            <p>            
+                <label>Nome prodotto: </label>
+                <input type ="text" name='nomeProdotto' placeholder="..Prodotto.." ><br>
+            </p>
+            <p>
+                <label>Prezzo netto: </label>
+                <input type = "text" name ="prezzoProdotto" placeholder = "..Prezzo.." ><br>
+            </p>
+            <p>
+                <label>Aliquota IVA: </label><br>
+                <input type ="radio" name="aliquota" id="minima" value ="minima">
+                <label for="minima">Minima</label><br>                
+                <input type ="radio" name="aliquota" id="ridotta" value ="ridotta">
+                <label for="ridotta">Ridotta</label><br> 
+                <input type ="radio" name="aliquota" id="ordinaria" value ="ordinaria">
+                <label for="ordinaria">Ordinaria</label><br> 
+            </p>
+            <input type="submit" value="CALCOLO">
+        </div>
+        </form>
+    </body>
+</html>
